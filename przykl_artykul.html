@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lorem Ipsum | 16.03.23r.</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .ad-space2 {
+        visibility: hidden;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #333;
+      }
+
+      header img {
+        max-width: 100%;
+      }
+
+      header nav {
+        display: flex;
+      }
+
+      header nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      header nav li {
+        margin: 0 10px;
+      }
+
+      header nav a {
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 14px;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      header nav a:hover {
+        background-color: #fff;
+        color: #333;
+      }
+
+      nav ul ul {
+        display: none;
+      }
+
+      nav ul li:hover > ul {
+        display: inherit;
+      }
+
+      nav ul {
+        padding: 0;
+        list-style: none;
+        position: relative;
+        display: inline-table;
+      }
+
+      nav ul li {
+        float: left;
+      }
+
+      nav ul li:hover {
+        background: #4b545f;
+      }
+
+      nav ul li:hover a {
+        color: #999;
+      }
+
+      nav ul li a {
+        display: block;
+        padding: 10px 20px;
+        color: #757575;
+        text-decoration: none;
+      }
+
+      nav ul ul {
+        background: #5f6975;
+        border-radius: 0px;
+        padding: 0;
+        position: absolute;
+        top: 100%;
+      }
+
+      nav ul ul li {
+        float: none;
+        position: relative;
+      }
+
+      nav ul ul li a {
+        padding: 10px 20px;
+        color: #fff;
+      }
+
+      .breadcrumbs {
+        /* margin: 20px 0; */
+        background-color: #f5f5f5;
+        padding: 10px;
+      }
+
+      .breadcrumbs ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+      }
+
+      .breadcrumbs li {
+        margin-right: 5px;
+      }
+
+      .breadcrumbs li:last-child {
+        font-weight: bold;
+      }
+
+      .breadcrumbs li span {
+        margin: 0 10px;
+      }
+
+      .breadcrumbs li a {
+        color: #333;
+        text-decoration: none;
+      }
+
+      .breadcrumbs li a:hover {
+        text-decoration: underline;
+      }
+
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      article {
+        flex: 2;
+        width: 80vw;
+      }
+
+      aside {
+        /* flex: 1; */
+        text-align: center;
+        width: 15vw;
+      }
+
+      aside section {
+        margin-bottom: 20px;
+      }
+
+      aside h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      aside ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      aside li {
+        margin-bottom: 10px;
+      }
+
+      aside li a {
+        color: #333;
+        text-decoration: none;
+      }
+
+      aside li a:hover {
+        text-decoration: underline;
+      }
+
+      section.title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #3333333b;
+      }
+
+      footer {
+        background-color: #333333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      header a {
+        text-decoration: none;
+        color: inherit;
+        position: relative;
+        font-size: medium;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        color: #0072e1;
+      }
+
+      .logo-container h1 {
+        border-left: #0072e1 solid 0.2vw;
+        padding-left: 0.2vw;
+      }
+
+      .logo-container img {
+        margin-right: 1vw;
+        /* opcjonalnie ustaw margines między logo a nazwą strony */
+        width: 35px;
+        height: 35px;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+      }
+
+      .menu-icon {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .menu li {
+        margin: 0 10px;
+      }
+
+      @media only screen and (max-width: 900px) {
+        .menu {
+          display: none;
+          flex-direction: column;
+          align-items: flex-start;
+          position: absolute;
+          top: 12%;
+          left: 0;
+          width: 100%;
+          padding: 10px;
+          background-color: #333;
+          z-index: 1;
+        }
+
+        aside {
+          /* flex: 1; */
+          text-align: left;
+          width: 20vw;
+          margin-left: 1vw;
+        }
+
+        .menu li {
+          margin: 10px 0;
+        }
+
+        .menu-icon {
+          display: block;
+        }
+
+        .show {
+          display: block;
+        }
+
+        .ad-space {
+          display: none;
+        }
+
+        .ad-space2 {
+          visibility: visible;
+          text-align: center;
+          background-color: #ddd;
+          margin-bottom: 1vh;
+        }
+      }
+
+      .bar1,
+      .bar2,
+      .bar3 {
+        height: 5px;
+        width: 35px;
+        background-color: #fff;
+        margin: 6px 0;
+        transition: 0.4s;
+      }
+
+      p {
+        margin: 10px;
+        font-size: 16px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+
+      .change .bar1 {
+        transform: translate(0, 11px) rotate(-45deg);
+      }
+
+      .change .bar2 {
+        opacity: 0;
+      }
+
+      .change .bar3 {
+        transform: translate(0, -11px) rotate(45deg);
+      }
+
+      .ad-space {
+        width: 15vw;
+        height: 90vh;
+        background-color: #ddd;
+        margin: 1px 10px;
+      }
+
+      img.imgart:nth-child(odd) {
+        float: right;
+        width: 40%;
+        margin: 10px;
+      }
+
+      img.imgart:nth-child(even) {
+        float: left;
+        width: 40%;
+        margin: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html">
+        <div class="logo-container">
+          <img src="img/logo.png" alt="Logo strony" />
+          <h1>Nazwa strony</h1>
+        </div>
+      </a>
+
+      <!--NAV-->
+      <nav>
+        <div class="menu-icon" onclick="myFunction(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+        <ul class="menu">
+          <li><a href="index.html">Strona główna</a></li>
+          <li>
+            <a href="#">Kategorie</a>
+            <ul>
+              <li><a href="#">Kategoria 1</a></li>
+              <li><a href="#">Kategoria 2</a></li>
+              <li><a href="#">Kategoria 3</a></li>
+              <li><a href="#">Kategoria 4</a></li>
+              <li><a href="#">Kategoria 5</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">O nas</a>
+            <ul>
+              <li><a href="#">Historia</a></li>
+              <li><a href="#">Misja i wizja</a></li>
+              <li><a href="#">Nasz zespół</a></li>
+              <li><a href="#">Nagrody i wyróżnienia</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- „Okruszki” -->
+    <div class="breadcrumbs">
+      <ul>
+        <li><a href="index.html">Strona główna</a></li>
+        <li><span>&gt;</span></li>
+        <li><a href="#">Kategorie</a></li>
+        <li><span>&gt;</span></li>
+        <li><a href="#">Kategoria 1</a></li>
+        <li><span>&gt;</span></li>
+        <li>Lorem Ipsum</li>
+      </ul>
+    </div>
+    <!--Main-->
+    <div class="ad-space2">
+      <h1>MIEJSCE NA TWOJĄ REKLAME, KONTAKT W TEJ SPRAWIE: 22 560 16 00</h1>
+    </div>
+    <main>
+      <aside>
+        <section>
+          <h2>Najczęściej czytane artykuły</h2>
+          <ul>
+            <li><a href="#">Tytuł artykułu 1</a></li>
+            <li><a href="#">Tytuł artykułu 2</a></li>
+            <li><a href="#">Tytuł artykułu 3</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Polecane artykuły</h2>
+          <ul>
+            <li><a href="#">Tytuł artykułu 1</a></li>
+            <li><a href="#">Tytuł artykułu 2</a></li>
+            <li><a href="#">Tytuł artykułu 3</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Ostatnie wpisy z blogów autorów</h2>
+          <ul>
+            <li><a href="#">Tytuł wpisu z bloga 1</a></li>
+            <li><a href="#">Tytuł wpisu z bloga 2</a></li>
+            <li><a href="#">Tytuł wpisu z bloga 3</a></li>
+          </ul>
+        </section>
+      </aside>
+      <article>
+        <section class="title">
+          <h1>Lorem ipsum</h1>
+          <p>Lorem Ipsum | 16.03.2023r.</p>
+        </section>
+        <section>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eros
+            enim, semper at facilisis nec, dignissim at libero. Aenean sagittis
+            rutrum ipsum eget varius. Nullam in scelerisque metus. Quisque
+            cursus eros at maximus mollis. Donec tristique aliquet lacus vitae
+            rhoncus. Mauris eros sem, suscipit et semper id, interdum eget
+            ligula. Mauris sed diam turpis.
+            <img src="img/article/Loremipusm16.03/zdj1.jpg" class="imgart" />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquam
+            iaculis nisi, non pulvinar metus facilisis in. Curabitur ac ipsum at
+            nulla posuere mattis nec sit amet nunc. Aenean consequat sapien leo,
+            non iaculis sem auctor ac. Nam dictum feugiat egestas. Fusce congue,
+            massa non cursus faucibus, justo velit vestibulum neque, sed
+            ultrices lectus arcu eu ligula. Aenean lectus ex, vulputate vitae
+            iaculis at, venenatis vel augue. Aliquam ultrices lectus et turpis
+            varius dictum. Suspendisse dapibus, odio et dictum efficitur, felis
+            massa placerat diam, in suscipit massa sem sit amet metus. In
+            fringilla nunc nibh, nec pellentesque tellus venenatis nec.
+            Curabitur id mollis tellus, non sollicitudin ante. Proin sit amet
+            porta lacus.
+            <img src="img/article/Loremipusm16.03/zdj2.jpg" class="imgart" />
+            Vivamus eu congue quam, in molestie libero. Sed sit amet consequat
+            justo. Quisque accumsan dictum diam ut viverra. Pellentesque
+            condimentum justo diam, et porttitor urna tincidunt vel. Nunc sit
+            amet dui ac libero ultricies mattis. Orci varius natoque penatibus
+            et magnis dis parturient montes, nascetur ridiculus mus. Proin
+            tincidunt dolor nibh, quis ultrices massa gravida at. Sed dignissim
+            est quis dictum accumsan. Praesent sed fringilla urna, et tincidunt
+            ligula. Phasellus cursus erat at orci mollis posuere. Morbi tempus
+            eget lacus a auctor. Proin cursus suscipit ex, id elementum nulla
+            congue ac. Quisque vel neque gravida, accumsan ex id, ultricies
+            justo.
+            <img src="img/article/Loremipusm16.03/zdj3.jpg" class="imgart" />
+            Donec lacinia tortor et eros feugiat tristique. Quisque facilisis
+            nunc purus, sit amet elementum risus iaculis vitae. Vestibulum eu
+            venenatis tortor. Vestibulum et ligula felis. Nam ullamcorper, ante
+            at euismod laoreet, turpis augue mattis lacus, vitae pellentesque
+            urna ligula in mauris. Duis lacus metus, posuere ut purus in,
+            malesuada blandit lectus. Praesent et augue lacinia, hendrerit justo
+            eget, tincidunt risus.
+            <img src="img/article/Loremipusm16.03/zdj4.jpg" class="imgart" />
+            Suspendisse non tempus ante. Ut et consequat lectus. Cras non
+            consectetur erat. Nunc posuere sem in leo tristique tincidunt.
+            Vivamus maximus a ligula quis semper. Aliquam erat volutpat. Aliquam
+            vitae egestas orci. Nulla ut tempor magna. Sed porttitor semper sem,
+            eu commodo massa tempor accumsan. Proin consectetur elementum orci,
+            in lobortis nunc tristique vel. Sed sed dictum nunc. Sed tristique
+            turpis quam, vel consectetur tortor hendrerit at. Class aptent
+            taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+            himenaeos. Vestibulum et lectus dapibus, efficitur dolor nec, auctor
+            ex. Pellentesque habitant morbi tristique senectus et netus et
+            malesuada fames ac turpis egestas. Sed luctus nisl eget nulla
+            pharetra viverra. Aenean arcu nunc, sagittis pellentesque varius
+            quis, semper at urna. Aenean imperdiet ultricies velit sed sodales.
+            Nam justo est, semper laoreet lobortis sed, iaculis quis mi.
+            Praesent nec egestas tortor.
+            <img src="img/article/Loremipusm16.03/zdj5.jpg" class="imgart" />
+            Sed a dui sagittis, lobortis tellus mollis, aliquam elit. Curabitur
+            porta leo eget nunc finibus, vel ullamcorper justo hendrerit.
+            Praesent convallis accumsan urna ac dapibus. Nulla bibendum non
+            tellus sit amet auctor. Suspendisse congue libero est, vitae
+            dignissim ligula euismod eu. Vestibulum aliquet, mauris eu placerat
+            rutrum, ligula ligula auctor metus, ut congue tellus sem et nisi.
+            Donec ullamcorper rutrum iaculis. Vivamus rhoncus lacus vel nibh
+            tincidunt vestibulum. Duis ullamcorper sodales nunc, eget imperdiet
+            nisl pretium et. Etiam sit amet nunc ac augue imperdiet elementum.
+            Nunc porttitor posuere aliquet. Nunc non laoreet felis. In at auctor
+            nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+            Vestibulum semper accumsan est quis efficitur. Cras massa odio,
+            eleifend ut turpis ut, tempor ullamcorper enim. Ut sed ipsum vitae
+            dui fringilla pretium eget et purus. Mauris tristique et est a
+            iaculis. Integer vitae odio id odio rhoncus ultrices. Nulla aliquam
+            ultrices quam eget consectetur. Nam efficitur lectus est, lobortis
+            dignissim dui sagittis ac. Ut sed odio vitae diam sodales efficitur.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+            sagittis vulputate pretium.
+          </p>
+        </section>
+      </article>
+
+      <div class="ad-space">
+        <h1>MIEJSCE NA TWOJĄ REKLAME, KONTAKT W TEJ SPRAWIE: 22 560 16 00</h1>
+      </div>
+    </main>
+    <!-- Stopka -->
+    <footer>
+      <p>&copy; 2023 Nazwa Strony. Wszystkie prawa zastrzeżone.</p>
+    </footer>
+  </body>
+  <script>
+    const menuIcon = document.querySelector(".menu-icon");
+    const menu = document.querySelector(".menu");
+
+    menuIcon.addEventListener("click", () => {
+      menu.classList.toggle("show");
+    });
+  </script>
+  <script>
+    function myFunction(x) {
+      x.classList.toggle("change");
+    }
+  </script>
+  <noscript>Twoja Przeglądarka nie wspiera JS</noscript>
+</html>
